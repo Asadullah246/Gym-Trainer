@@ -1,0 +1,15 @@
+form{
+    width: 45vw;
+}
+@media screen and (max-width: 768px) {
+    form{
+        width: 60vw;
+    }
+}
+    
+@media screen and (max-width: 576px) {
+    form{
+        width: 70vw;
+    }
+}
+    

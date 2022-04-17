@@ -10,10 +10,17 @@ const Signup = () => {
     // const [email, setEmail] = useState('');
     // const [password, setPassword] = useState('');
     // const [confirmPassword, setConfirmPassword] = useState('');
+  
+    const navigate=useNavigate()
+  
+  const navigateLogin = e => {
+    e.preventDefault();
+    navigate('/login')
+  }
     const [error2, setError] = useState(null);
     const [loading2, setLoading] = useState(false);
 
-    const navigate=useNavigate()
+    
 
     const [
         createUserWithEmailAndPassword,
@@ -98,7 +105,7 @@ const Signup = () => {
   </Button>
             </Form>
             
-            <p>Already have an account? <button>Login here</button></p>
+            <p>Already have an account? <button onClick={navigateLogin}>Login here</button></p>
             
         </div>
     );

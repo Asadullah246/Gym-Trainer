@@ -1,4 +1,5 @@
 
+import { createContext, useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Navb from './Components/Navbar-component/Navb';
@@ -6,13 +7,17 @@ import Signup from './Components/Navbar-component/Signup/Signup';
 import Home from './Home/Home';
 import Login from './Login/Login';
 
+export const MyContext = createContext();
+
 
 
 function App() {
+  const [userData, setUserData] = useState([]);
 
   return (
   
-    <div className="App">
+    <MyContext.Provider value={[userData, setUserData]}>
+      <div className="App">
       {/* <Navbar></Navbar> */}
       <Navb></Navb>
       <Routes>
@@ -24,6 +29,7 @@ function App() {
     
 
     </div>
+    </MyContext.Provider>
   );
   
 }
