@@ -1,15 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import "./Home.css"
 
 const Home = () => {
     const [data, setData] = useState([]);
+
+    const navigate=useNavigate();
     useEffect(() => {
         fetch('data.json')
             .then(res => res.json())
         .then(data => setData(data))
-    },[])
+    }, [])
+    
+    const checkout = () => { 
+        navigate('/checkout')
+    }
     return (
         <>
              
@@ -40,7 +46,7 @@ const Home = () => {
                                                     <h5 className="card-title">{singlePackage.name}</h5>
                                                     <p className="card-text"><span>Price :</span> ${singlePackage.price}</p>
                                                     <p className="card-text"><span>Description :</span>{singlePackage.description}</p>
-                                                    <button href="#" className="btn btn-primary checkout-button">Checkout</button>
+                                                    <button onClick={checkout} className="btn btn-primary checkout-button">Checkout</button>
                                                 </div>
                                             </div>
                                         </div>

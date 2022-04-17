@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { MyContext } from '../App';
 import { auth } from '../Firebase.init';
 import "./Login.css"
@@ -14,6 +14,8 @@ const [userData, setUserData]=useContext(MyContext)
     e.preventDefault()
     navigate('/signup')
   }
+  const location = useLocation();
+  let from = location.state?.from?.pathname || "/";
 
   let errorText="";
   const [
@@ -22,6 +24,11 @@ const [userData, setUserData]=useContext(MyContext)
     loading,
     error,
   ] = useSignInWithEmailAndPassword(auth)
+
+  if (user) {
+    navigate(from, { replace: true });
+}
+
 
   const handleLogin =  async (event)  => {
       event.preventDefault();
