@@ -11,6 +11,12 @@ nav a{
 nav a:hover{
     color: #20d410;
 }
+.signOut-button{
+    border: none;
+    color: white;
+    background-color: #0D6EFD;
+    margin-left: 12px;
+}
 
 @media screen and (max-width: 576px){
     nav a{
