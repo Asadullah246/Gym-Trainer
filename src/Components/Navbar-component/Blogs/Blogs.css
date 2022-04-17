@@ -1,6 +1,11 @@
 .blogs{
     width: 95vw;
     margin: 20px auto;
+    margin-top: 50px;
+}
+.blogs h2{
+    text-align: center;
+    margin-bottom: 20px;
 }
 .blogs div{
     margin-bottom: 50px;

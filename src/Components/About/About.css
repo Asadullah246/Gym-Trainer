@@ -1,0 +1,14 @@
+
+.img-div{
+    margin: 30px auto;
+}
+.mypic{
+    width: 300px;
+    height: auto;
+    border-radius: 50%;
+}
+
+.details{
+    width: 95vw;
+    margin: auto auto;
+}
