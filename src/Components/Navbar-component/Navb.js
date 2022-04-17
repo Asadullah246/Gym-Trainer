@@ -17,7 +17,7 @@ const Navb = () => {
      
                         <NavLink to="/home">Home</NavLink>
                         {
-                            user?.uid ? <button className='signOut-button' onClick={()=>signOut(auth)}>Signout</button> :<NavLink to="/login">Login</NavLink>
+                            user?.uid ? <button className='signOut-button' onClick={()=>signOut(auth)}>Sign out</button> :<NavLink to="/login">Login</NavLink>
                         }
       
       <NavLink to="/Blogs">Blogs</NavLink>
