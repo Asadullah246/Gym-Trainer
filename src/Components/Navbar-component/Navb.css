@@ -1,0 +1,19 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+nav a{
+    color: white;
+    margin-left: 12px;
+    text-decoration: none;
+}
+nav a:hover{
+    color: #20d410;
+}
+
+@media screen and (max-width: 576px){
+    nav a{
+        margin-left: 5px;
+    }
+}
