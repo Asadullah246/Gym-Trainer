@@ -1,0 +1,22 @@
+
+
+.package-details{
+    width: 530px;
+    margin: 40px auto;
+    text-align: start;
+    margin-top: 60px;
+    padding: 0 20px;
+   
+}
+.checkout-div{
+    width: 100vw;
+}
+.form-div{
+    width: 530px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+.input-tag{
+    height: 40px;
+    background-color: rgba(221, 193, 193, 0.699);
+}

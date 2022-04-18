@@ -2,8 +2,10 @@ import React, { useContext } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { MyContext } from '../App';
-import { auth } from '../Firebase.init';
+import { MyContext } from '../../App';
+import { auth } from '../../Firebase.init';
+// import { MyContext } from '../App';
+// import { auth } from '../Firebase.init';
 import "./Login.css"
 
 const Login = () => {

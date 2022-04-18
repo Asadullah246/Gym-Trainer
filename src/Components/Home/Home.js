@@ -5,16 +5,17 @@ import "./Home.css"
 
 const Home = () => {
     const [data, setData] = useState([]);
-
-    const navigate=useNavigate();
+    const navigate = useNavigate();
     useEffect(() => {
         fetch('data.json')
             .then(res => res.json())
         .then(data => setData(data))
     }, [])
     
-    const checkout = () => { 
-        navigate('/checkout')
+    const checkout = (id) => { 
+        navigate(`/checkout`)
+        // navigate(`/checkout/${id}`)
+        localStorage.setItem('id', id);
     }
     return (
         <>
@@ -46,7 +47,7 @@ const Home = () => {
                                                     <h5 className="card-title">{singlePackage.name}</h5>
                                                     <p className="card-text"><span>Price :</span> ${singlePackage.price}</p>
                                                     <p className="card-text"><span>Description :</span>{singlePackage.description}</p>
-                                                    <button onClick={checkout} className="btn btn-primary checkout-button">Checkout</button>
+                                                    <button onClick={()=>checkout(singlePackage.id)} className="btn btn-primary checkout-button">Checkout</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -98,7 +99,7 @@ const Home = () => {
                 <div>
                     <small>All right reserved &copy; 2022</small>
                 </div>
-                <div><small>For any problem or suggetion, please mail us </small> <br />
+                <div><small>For any problem or suggestion, please mail us </small> <br />
                 <strong>something@hotmail.com</strong>
                 </div>
             </footer>

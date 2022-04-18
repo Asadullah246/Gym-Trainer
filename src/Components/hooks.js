@@ -1,7 +1,7 @@
 import { GoogleAuthProvider, onAuthStateChanged, signInWithPopup, signOut } from "firebase/auth";
 import { useEffect, useState } from "react";
 import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
-import { auth } from "../../Firebase.init";
+import { auth } from "../Firebase.init";
 
 
 

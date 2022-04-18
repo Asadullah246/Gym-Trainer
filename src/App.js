@@ -4,12 +4,12 @@ import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import About from './Components/About/About';
 import Checkout from './Components/Checkout/Checkout';
-import Blogs from './Components/Navbar-component/Blogs/Blogs';
-import Navb from './Components/Navbar-component/Navb';
-import Signup from './Components/Navbar-component/Signup/Signup';
+import Blogs from './Components/Blogs/Blogs';
+import Navber from './Components/Navber/Navber';
 import RequireAuth from './Components/RequireAuth';
-import Home from './Home/Home';
-import Login from './Login/Login';
+import Home from './Components/Home/Home';
+import Signup from './Components/Signup/Signup';
+import Login from './Components/Login/Login';
 
 export const MyContext = createContext();
 
@@ -22,8 +22,8 @@ function App() {
   
     <MyContext.Provider value={[userData, setUserData]}>
       <div className="App">
-      {/* <Navbar></Navbar> */}
-      <Navb></Navb>
+      
+      <Navber></Navber>
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="/home" element={<Home></Home>}></Route>

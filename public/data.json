@@ -1,18 +1,21 @@
 [
     {
         "name": "30 Minutes Service",
+        "id": 1,
         "price": 30,
         "description": "30 minutes of service once time. (No repeat) ",
         "image": "https://i.ibb.co/N600yry/gym1.jpg"
     },
     {
         "name": "1 hour Service",
+        "id": 2,
         "price": 50,
         "description": "1 hour of service once time. (No repeat) ",
         "image": "https://i.ibb.co/CBmPJ6R/gym2.jpg"
     },
     {
         "name": "1 hour Service monthly",
+        "id": 3,
         "price": 500,
         "description": "1 hour of service for 1 or more month. You need to pay 500$ for 1 month ",
         "image": "https://i.ibb.co/LdVY7Rr/gym3.jpg"

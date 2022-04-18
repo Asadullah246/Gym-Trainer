@@ -4,15 +4,15 @@ import { Container, Nav, Navbar } from 'react-bootstrap';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { NavLink } from 'react-router-dom';
 import { auth } from '../../Firebase.init';
-import "./Navb.css"
+import "./Navber.css"
 
-const Navb = () => {
+const Navber = () => {
     const [user] = useAuthState(auth);
     return (
         <div>
               <Navbar bg="primary" variant="dark">
     <Container>
-    <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+    <Navbar.Brand href="/home">ZYM TRAINER</Navbar.Brand>
     <Nav className="me-3">
      
                         <NavLink to="/home">Home</NavLink>
@@ -25,12 +25,8 @@ const Navb = () => {
     </Nav>
     </Container>
             </Navbar>
-           
-            
         </div>
     );
 };
 
- {/* <Nav.Link to="#home">Home</Nav.Link> */}
-
-export default Navb;
+export default Navber;

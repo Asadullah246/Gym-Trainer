@@ -2,10 +2,11 @@ import React, { useRef, useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import "./Signup.css"
 import { useAuthState, useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
-import { auth } from '../../../Firebase.init';
+// import { auth } from '../../../Firebase.init';
 import { async } from '@firebase/util';
 import { useNavigate } from 'react-router-dom';
 import { createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import { auth } from '../../Firebase.init';
 
 const Signup = () => {
     // const navigate=useNavigate()
