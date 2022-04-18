@@ -24,5 +24,14 @@ nav a:hover{
 @media screen and (max-width: 576px){
     nav a{
         margin-left: 5px;
+        font-size: .8em;
+    }
+    .navbar-heading{
+        font-size: .8em;
+    }
+    .signOut-button{
+        font-size: .8em;
+        margin-left: 5px;
+
     }
 }

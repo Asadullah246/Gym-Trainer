@@ -1,51 +1,16 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import "./Signup.css"
 import { useAuthState, useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
-// import { auth } from '../../../Firebase.init';
-import { async } from '@firebase/util';
 import { useNavigate } from 'react-router-dom';
 import { createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import { auth } from '../../Firebase.init';
 
 const Signup = () => {
-    // const navigate=useNavigate()
-  
   const navigateLogin = e => {
     e.preventDefault();
+    navigate('/login');
   }
-  // const [user, setUser] = useAuthState(auth)
-  
-  // const [error, setError]=useState("")
-  // //   const [
-  // //       createUserWithEmailAndPassword,
-  // //       user2,
-  // //       loading, error
-  // // ] = useCreateUserWithEmailAndPassword(auth);
-
-  //   const emailRef=useRef('')
-  //   const passwordRef=useRef('')
-  // // const confirmPasswordRef = useRef('')
-  // const email = emailRef.current.value;
-  //       const password = passwordRef.current.value;
-  // // const confirmPassword = confirmPasswordRef.current.value;
-  // const [createUserWithEmailAndPassword, user2] = useCreateUserWithEmailAndPassword(auth)
-
-  
-
-    
-  //   const handleSubmit =event => { 
-  //       event.preventDefault();
-  //       createUserWithEmailAndPassword( email, password)
-  //       // .then((result) => {
-  //       //   // setUser(result.user)
-  //       //   console.log(result.user);
-  //       // })
-  //       // .catch((error) => { 
-  //       //   setError(error.message)
-  //       // })
-        
-  // }
   const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
@@ -67,7 +32,7 @@ const Signup = () => {
     }
 
     if(user){
-        navigate('/login');
+        navigate('/');
     }
 
     const handleSubmit = event =>{
@@ -90,6 +55,7 @@ const Signup = () => {
     e.preventDefault()
     signInWithPopup(auth, provider)
       .then(result => {
+        navigate('/')
         console.log(result.user)})
         .catch(err => {
           console.log(err.message);
@@ -102,34 +68,38 @@ const Signup = () => {
             <h2 className='text center mt-5 mb-3'>Sign up</h2>
              <Form onSubmit={handleSubmit}>
   <Form.Group className="mb-3" controlId="formBasicEmail">
+    <Form.Label>Name</Form.Label>
+    <Form.Control onBlur={handleEmailBlur} type="text" className='input-tag' placeholder="Enter name" required/>
+    
+          </Form.Group>
+  <Form.Group className="mb-3" controlId="formBasicEmail">
     <Form.Label>Email address</Form.Label>
-    <Form.Control onBlur={handleEmailBlur} type="email" placeholder="Enter email" required/>
-    <Form.Text className="text-muted">
-      We'll never share your email with anyone else.
-    </Form.Text>
-  </Form.Group>
+    <Form.Control onBlur={handleEmailBlur} type="email" className='input-tag' placeholder="Enter email" required/>
+    
+          </Form.Group>
+          
 
   <Form.Group className="mb-3" controlId="formBasicPassword">
     <Form.Label>Password</Form.Label>
-    <Form.Control onBlur={handlePasswordBlur} type="password" placeholder="Password" required/>
+    <Form.Control onBlur={handlePasswordBlur} type="password" className='input-tag' placeholder="Password" required/>
   </Form.Group>
   <Form.Group className="mb-3" controlId="formBasicPassword">
     <Form.Label>Confirm Password</Form.Label>
-    <Form.Control onBlur={handleConfirmPasswordBlur} type="password" placeholder="Confirm Password" required/>
+    <Form.Control onBlur={handleConfirmPasswordBlur} type="password" className='input-tag' placeholder="Confirm Password" required/>
   </Form.Group>
           
   {/* <Form.Group className="mb-3" controlId="formBasicCheckbox">
     <Form.Check type="checkbox" label="Check me out" />
                 </Form.Group> */}
-          {/* <p>{ error?.message}</p> */}
+         
           <p>{error} </p>
   <Button variant="primary" type="submit" value='sign up'> 
     Submit
   </Button>
         </Form>
-        <button onClick={signInWithGoogle}>sign up with google</button>
+        <button onClick={signInWithGoogle} className="googleSignIn">google sign in</button>
             
-            <p>Already have an account? <button onClick={navigateLogin}>Login here</button></p>
+            <p>Already have an account? <button onClick={navigateLogin} className="sign-btn">Login here</button></p>
             
         </div>
     );

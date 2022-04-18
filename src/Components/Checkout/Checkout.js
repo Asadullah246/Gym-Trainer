@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
-import useUser from '../useHook';
 import "./Checkout.css"
 
 const Checkout = () => {
@@ -26,6 +25,7 @@ const Checkout = () => {
         <div>
             
             <div className='checkout-div'>
+                <h3 className='text-center fw-bold mt-5'>Package details</h3>
                 {
                     data2.map(data => {
                         if (data.id === id) {
@@ -39,7 +39,8 @@ const Checkout = () => {
                             
                         }
                     })
-            }
+                }
+                <h5 className='text-center mt-4 mb-3'>Please fill up the form</h5>
 
             <Form className='form-div' onSubmit={handleSubmit}>
   <Form.Group className="mb-3" controlId="formBasicEmail">

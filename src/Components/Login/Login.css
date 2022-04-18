@@ -3,3 +3,21 @@ form{
     width: 45vw;
     margin: 20px auto;
 }
+.sign-btn{
+    border: none;
+    background-color: white;
+    color: blue;
+}
+.googleSignIn{
+    border: none;
+    background-color: rgba(157, 173, 180, 0.76);
+    padding: 4px 18px;
+    border-radius: 16px;
+    color: blue;
+    margin-bottom: 10px;
+    transition: ease-in-out .2s;
+}
+.googleSignIn:hover{
+    background-color: rgb(136, 161, 172);
+    color: white;
+}

@@ -11,16 +11,11 @@ import Home from './Components/Home/Home';
 import Signup from './Components/Signup/Signup';
 import Login from './Components/Login/Login';
 
-export const MyContext = createContext();
-
-
-
 function App() {
-  const [userData, setUserData] = useState([]);
 
   return (
   
-    <MyContext.Provider value={[userData, setUserData]}>
+
       <div className="App">
       
       <Navber></Navber>
@@ -40,7 +35,7 @@ function App() {
     
 
     </div>
-    </MyContext.Provider>
+   
   );
   
 }

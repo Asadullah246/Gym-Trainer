@@ -12,7 +12,7 @@ const Navber = () => {
         <div>
               <Navbar bg="primary" variant="dark">
     <Container>
-    <Navbar.Brand href="/home">ZYM TRAINER</Navbar.Brand>
+    <Navbar.Brand href="/home" className='navbar-heading'>ZYM TRAINER</Navbar.Brand>
     <Nav className="me-3">
      
                         <NavLink to="/home">Home</NavLink>
