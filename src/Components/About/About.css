@@ -1,8 +1,10 @@
 
 .img-div{
-    margin: 30px auto;
+    margin: 50px auto;
+   
 }
 .mypic{
+    margin-top: 50px;
     width: 300px;
     height: auto;
     border-radius: 50%;

@@ -14,7 +14,9 @@ const Signup = () => {
   const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
-    const [error, setError] = useState('');
+  const [error, setError] = useState('');
+  const [agree, setAgree] = useState();
+
     const navigate = useNavigate();
 
     const [createUserWithEmailAndPassword, user] = useCreateUserWithEmailAndPassword(auth,{sendEmailVerification: true})
@@ -87,13 +89,12 @@ const Signup = () => {
     <Form.Label>Confirm Password</Form.Label>
     <Form.Control onBlur={handleConfirmPasswordBlur} type="password" className='input-tag' placeholder="Confirm Password" required/>
   </Form.Group>
-          
-  {/* <Form.Group className="mb-3" controlId="formBasicCheckbox">
-    <Form.Check type="checkbox" label="Check me out" />
-                </Form.Group> */}
+ 
+          <input type="checkbox" name="terms" id="" onClick={() => setAgree(!agree)} />
+          <label className={`ps-2 ${agree ? 'agree' : 'notAgree'}`} for="terms">I agree to the terms and conditions</label>
          
           <p>{error} </p>
-  <Button variant="primary" type="submit" value='sign up'> 
+  <Button  disabled={!agree} variant="primary" type="submit" value='sign up'> 
     Submit
   </Button>
         </Form>

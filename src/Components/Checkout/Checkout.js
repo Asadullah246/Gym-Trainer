@@ -19,7 +19,7 @@ const Checkout = () => {
     console.log(data2);
     const handleSubmit = (e) => { 
         e.preventDefault();
-        alert('Your order has been placed successfully');
+        alert('Thank you for the booking.');
     }
     return (
         <div>

@@ -42,11 +42,11 @@ const Home = () => {
                                     return (
                                         <div className="col-md-4">
                                             <div className="card card-div">
-                                                <div className="card-body">
+                                                <div className="card-body card-section">
                                                     <div className='img-div'><img className='card-img' src={singlePackage.image} alt="" /></div>
                                                     <h5 className="card-title">{singlePackage.name}</h5>
                                                     <p className="card-text"><span>Price :</span> ${singlePackage.price}</p>
-                                                    <p className="card-text"><span>Description :</span>{singlePackage.description}</p>
+                                                    <p className="card-text description"><span>Description :</span>{singlePackage.description}</p>
                                                     <button onClick={()=>checkout(singlePackage.id)} className="btn btn-primary checkout-button">Checkout</button>
                                                 </div>
                                             </div>
